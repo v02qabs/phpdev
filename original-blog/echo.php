@@ -16,19 +16,11 @@
 	}
 	function logginged()
 	{
-
-	echo "Hello View<br/><br/>";
-	$files = glob('./blog/*.txt');
-	
-	foreach($files as $key => $value)
-	{
-		echo "value:".$value.'<br/>';
-		$contents = file($value);
-		foreach($contents as  $number => $content)
+		echo "Hello View<br/><br/>";
+		$files = fopen('./blog/*.txt', 'r');
+		while($line == fgets($files))
 		{
-			echo "con".$content.'<br/>';
+			echo $line;
 		}
-			
-	}
 	}
 ?>
